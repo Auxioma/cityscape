@@ -1,0 +1,498 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MapLocationController!{% endblock %}
+
+{% block body %}
+<!-- ==================== Breadcrumb Start Here ==================== -->
+<section class="breadcrumb padding-y-120">
+    <img src="assets/images/thumbs/breadcrumb-img.png" alt="" class="breadcrumb__img">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="breadcrumb__wrapper">
+                    <h2 class="breadcrumb__title"> Map Location</h2>
+                    <ul class="breadcrumb__list">
+                        <li class="breadcrumb__item"><a href="index.html" class="breadcrumb__link"> <i class="las la-home"></i> Home</a> </li>
+                        <li class="breadcrumb__item"><i class="fas fa-angle-right"></i></li>
+                        <li class="breadcrumb__item"> <span class="breadcrumb__item-text"> Map Location </span> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ==================== Breadcrumb End Here ==================== -->
+
+
+<!-- ========================= Map Location Section Start ======================= -->
+<div class="map-location padding-y-120">
+    <div class="container container-two">
+        <div class="row gy-4">
+            <div class="col-lg-8">
+                <div class="property-filter__bottom flx-between gap-2 mt-0 mb-4">
+                    <span class="property-filter__text font-18 fw-500 text-heading">Showing 1-10 of 23</span>
+                    <div class="d-flex align-items-center gap-2">
+                        <h6 class="property-filter__text font-16 mb-0"> Your State: </h6>
+                        <div class="select-has-icon icon-black">
+                            <select class="select common-input">
+                                <option disabled>Make A Selection</option>
+                                <option value="1">New York</option>
+                                <option value="1">South Carolina</option>
+                                <option value="1">Florida</option>
+                                <option value="1">Rhode Island</option>
+                                <option value="1">Melbourne</option>
+                                <option value="1">Sydney</option>
+                                <option value="1">Cairns</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-location__content">
+                    <div class="map-location__item mb-5">
+                        <h3 class="title text-poppins mb-3 fw-semibold">Alabama</h3>
+                        <div class="row gy-4">
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="card common-card">
+                                    <div class="card-body p-lg-4 p-3">
+                                        <h6 class="mb-4 border-bottom pb-3 mb-3 font-18">Alabama, New York</h6>
+                                        <div class="contact-info style-two d-flex align-items-center gap-lg-3 gap-2">
+                                            <span class="contact-info__icon flex-shrink-0"><i class="fas fa-map-marker-alt"></i></span>
+                                            <div class="contact-info__content">
+                                                <span class="contact-info__text text-heading fw-bold font-16">Address</span>
+                                                <span class="contact-info__address font-15 fw-500">5816 S. Coulter Street Amarillo, TX 79119</span>
+                                            </div>
+                                        </div>
+                                        <div class="contact-info style-two d-flex align-items-center gap-lg-3 gap-2">
+                                            <span class="contact-info__icon flex-shrink-0"><i class="fas fa-phone"></i></span>
+                                            <div class="contact-info__content">
+                                                <span class="contact-info__text text-heading fw-bold font-16">Phone Number</span>
+                                                <span class="contact-info__address font-15 fw-500">012 345 678 9101</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex mt-4 align-items-center gap-2">
+                                            <a href="#" class="btn btn-outline-light btn-sm w-50">Appointment 
+                                                <span class="icon-right text-gradient icon"> 
+                                                    <i class="fas fa-paper-plane"></i>
+                                                 </span> 
+                                            </a>
+                                            <a href="#" class="btn btn-outline-light btn-sm w-50">Website
+                                                <span class="icon-right text-gradient icon"> 
+                                                    <i class="fas fa-globe"></i>
+                                                 </span> 
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="card common-card">
+                                    <div class="card-body p-lg-4 p-3">
+                                        <h6 class="mb-4 border-bottom pb-3 mb-3 font-18">Alabama, New York</h6>
+                                        <div class="contact-info style-two d-flex align-items-center gap-lg-3 gap-2">
+                                            <span class="contact-info__icon flex-shrink-0"><i class="fas fa-map-marker-alt"></i></span>
+                                            <div class="contact-info__content">
+                                                <span class="contact-info__text text-heading fw-bold font-16">Address</span>
+                                                <span class="contact-info__address font-15 fw-500">5816 S. Coulter Street Amarillo, TX 79119</span>
+                                            </div>
+                                        </div>
+                                        <div class="contact-info style-two d-flex align-items-center gap-lg-3 gap-2">
+                                            <span class="contact-info__icon flex-shrink-0"><i class="fas fa-phone"></i></span>
+                                            <div class="contact-info__content">
+                                                <span class="contact-info__text text-heading fw-bold font-16">Phone Number</span>
+                                                <span class="contact-info__address font-15 fw-500">012 345 678 9101</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex mt-4 align-items-center gap-2">
+                                            <a href="#" class="btn btn-outline-light btn-sm w-50">Appointment 
+                                                <span class="icon-right text-gradient icon"> 
+                                                    <i class="fas fa-paper-plane"></i>
+                                                 </span> 
+                                            </a>
+                                            <a href="#" class="btn btn-outline-light btn-sm w-50">Website
+                                                <span class="icon-right text-gradient icon"> 
+                                                    <i class="fas fa-globe"></i>
+                                                 </span> 
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="card common-card">
+                                    <div class="card-body p-lg-4 p-3">
+                                        <h6 class="mb-4 border-bottom pb-3 mb-3 font-18">Alabama, New York</h6>
+                                        <div class="contact-info style-two d-flex align-items-center gap-lg-3 gap-2">
+                                            <span class="contact-info__icon flex-shrink-0"><i class="fas fa-map-marker-alt"></i></span>
+                                            <div class="contact-info__content">
+                                                <span class="contact-info__text text-heading fw-bold font-16">Address</span>
+                                                <span class="contact-info__address font-15 fw-500">5816 S. Coulter Street Amarillo, TX 79119</span>
+                                            </div>
+                                        </div>
+                                        <div class="contact-info style-two d-flex align-items-center gap-lg-3 gap-2">
+                                            <span class="contact-info__icon flex-shrink-0"><i class="fas fa-phone"></i></span>
+                                            <div class="contact-info__content">
+                                                <span class="contact-info__text text-heading fw-bold font-16">Phone Number</span>
+                                                <span class="contact-info__address font-15 fw-500">012 345 678 9101</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex mt-4 align-items-center gap-2">
+                                            <a href="#" class="btn btn-outline-light btn-sm w-50">Appointment 
+                                                <span class="icon-right text-gradient icon"> 
+                                                    <i class="fas fa-paper-plane"></i>
+                                                 </span> 
+                                            </a>
+                                            <a href="#" class="btn btn-outline-light btn-sm w-50">Website
+                                                <span class="icon-right text-gradient icon"> 
+                                                    <i class="fas fa-globe"></i>
+                                                 </span> 
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="card common-card">
+                                    <div class="card-body p-lg-4 p-3">
+                                        <h6 class="mb-4 border-bottom pb-3 mb-3 font-18">Alabama, New York</h6>
+                                        <div class="contact-info style-two d-flex align-items-center gap-lg-3 gap-2">
+                                            <span class="contact-info__icon flex-shrink-0"><i class="fas fa-map-marker-alt"></i></span>
+                                            <div class="contact-info__content">
+                                                <span class="contact-info__text text-heading fw-bold font-16">Address</span>
+                                                <span class="contact-info__address font-15 fw-500">5816 S. Coulter Street Amarillo, TX 79119</span>
+                                            </div>
+                                        </div>
+                                        <div class="contact-info style-two d-flex align-items-center gap-lg-3 gap-2">
+                                            <span class="contact-info__icon flex-shrink-0"><i class="fas fa-phone"></i></span>
+                                            <div class="contact-info__content">
+                                                <span class="contact-info__text text-heading fw-bold font-16">Phone Number</span>
+                                                <span class="contact-info__address font-15 fw-500">012 345 678 9101</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex mt-4 align-items-center gap-2">
+                                            <a href="#" class="btn btn-outline-light btn-sm w-50">Appointment 
+                                                <span class="icon-right text-gradient icon"> 
+                                                    <i class="fas fa-paper-plane"></i>
+                                                 </span> 
+                                            </a>
+                                            <a href="#" class="btn btn-outline-light btn-sm w-50">Website
+                                                <span class="icon-right text-gradient icon"> 
+                                                    <i class="fas fa-globe"></i>
+                                                 </span> 
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-location__item mb-5">
+                        <h3 class="title text-poppins mb-3 fw-semibold">Boston</h3>
+                        <div class="row gy-4">
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="card common-card">
+                                    <div class="card-body p-lg-4 p-3">
+                                        <h6 class="mb-4 border-bottom pb-3 mb-3 font-18">Boston, New York</h6>
+                                        <div class="contact-info style-two d-flex align-items-center gap-lg-3 gap-2">
+                                            <span class="contact-info__icon flex-shrink-0"><i class="fas fa-map-marker-alt"></i></span>
+                                            <div class="contact-info__content">
+                                                <span class="contact-info__text text-heading fw-bold font-16">Address</span>
+                                                <span class="contact-info__address font-15 fw-500">5816 S. Coulter Street Amarillo, TX 79119</span>
+                                            </div>
+                                        </div>
+                                        <div class="contact-info style-two d-flex align-items-center gap-lg-3 gap-2">
+                                            <span class="contact-info__icon flex-shrink-0"><i class="fas fa-phone"></i></span>
+                                            <div class="contact-info__content">
+                                                <span class="contact-info__text text-heading fw-bold font-16">Phone Number</span>
+                                                <span class="contact-info__address font-15 fw-500">012 345 678 9101</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex mt-4 align-items-center gap-2">
+                                            <a href="#" class="btn btn-outline-light btn-sm w-50">Appointment 
+                                                <span class="icon-right text-gradient icon"> 
+                                                    <i class="fas fa-paper-plane"></i>
+                                                 </span> 
+                                            </a>
+                                            <a href="#" class="btn btn-outline-light btn-sm w-50">Website
+                                                <span class="icon-right text-gradient icon"> 
+                                                    <i class="fas fa-globe"></i>
+                                                 </span> 
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="card common-card">
+                                    <div class="card-body p-lg-4 p-3">
+                                        <h6 class="mb-4 border-bottom pb-3 mb-3 font-18">Boston, New York</h6>
+                                        <div class="contact-info style-two d-flex align-items-center gap-lg-3 gap-2">
+                                            <span class="contact-info__icon flex-shrink-0"><i class="fas fa-map-marker-alt"></i></span>
+                                            <div class="contact-info__content">
+                                                <span class="contact-info__text text-heading fw-bold font-16">Address</span>
+                                                <span class="contact-info__address font-15 fw-500">5816 S. Coulter Street Amarillo, TX 79119</span>
+                                            </div>
+                                        </div>
+                                        <div class="contact-info style-two d-flex align-items-center gap-lg-3 gap-2">
+                                            <span class="contact-info__icon flex-shrink-0"><i class="fas fa-phone"></i></span>
+                                            <div class="contact-info__content">
+                                                <span class="contact-info__text text-heading fw-bold font-16">Phone Number</span>
+                                                <span class="contact-info__address font-15 fw-500">012 345 678 9101</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex mt-4 align-items-center gap-2">
+                                            <a href="#" class="btn btn-outline-light btn-sm w-50">Appointment 
+                                                <span class="icon-right text-gradient icon"> 
+                                                    <i class="fas fa-paper-plane"></i>
+                                                 </span> 
+                                            </a>
+                                            <a href="#" class="btn btn-outline-light btn-sm w-50">Website
+                                                <span class="icon-right text-gradient icon"> 
+                                                    <i class="fas fa-globe"></i>
+                                                 </span> 
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="card common-card">
+                                    <div class="card-body p-lg-4 p-3">
+                                        <h6 class="mb-4 border-bottom pb-3 mb-3 font-18">Boston, New York</h6>
+                                        <div class="contact-info style-two d-flex align-items-center gap-lg-3 gap-2">
+                                            <span class="contact-info__icon flex-shrink-0"><i class="fas fa-map-marker-alt"></i></span>
+                                            <div class="contact-info__content">
+                                                <span class="contact-info__text text-heading fw-bold font-16">Address</span>
+                                                <span class="contact-info__address font-15 fw-500">5816 S. Coulter Street Amarillo, TX 79119</span>
+                                            </div>
+                                        </div>
+                                        <div class="contact-info style-two d-flex align-items-center gap-lg-3 gap-2">
+                                            <span class="contact-info__icon flex-shrink-0"><i class="fas fa-phone"></i></span>
+                                            <div class="contact-info__content">
+                                                <span class="contact-info__text text-heading fw-bold font-16">Phone Number</span>
+                                                <span class="contact-info__address font-15 fw-500">012 345 678 9101</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex mt-4 align-items-center gap-2">
+                                            <a href="#" class="btn btn-outline-light btn-sm w-50">Appointment 
+                                                <span class="icon-right text-gradient icon"> 
+                                                    <i class="fas fa-paper-plane"></i>
+                                                 </span> 
+                                            </a>
+                                            <a href="#" class="btn btn-outline-light btn-sm w-50">Website
+                                                <span class="icon-right text-gradient icon"> 
+                                                    <i class="fas fa-globe"></i>
+                                                 </span> 
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="card common-card">
+                                    <div class="card-body p-lg-4 p-3">
+                                        <h6 class="mb-4 border-bottom pb-3 mb-3 font-18">Boston, New York</h6>
+                                        <div class="contact-info style-two d-flex align-items-center gap-lg-3 gap-2">
+                                            <span class="contact-info__icon flex-shrink-0"><i class="fas fa-map-marker-alt"></i></span>
+                                            <div class="contact-info__content">
+                                                <span class="contact-info__text text-heading fw-bold font-16">Address</span>
+                                                <span class="contact-info__address font-15 fw-500">5816 S. Coulter Street Amarillo, TX 79119</span>
+                                            </div>
+                                        </div>
+                                        <div class="contact-info style-two d-flex align-items-center gap-lg-3 gap-2">
+                                            <span class="contact-info__icon flex-shrink-0"><i class="fas fa-phone"></i></span>
+                                            <div class="contact-info__content">
+                                                <span class="contact-info__text text-heading fw-bold font-16">Phone Number</span>
+                                                <span class="contact-info__address font-15 fw-500">012 345 678 9101</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex mt-4 align-items-center gap-2">
+                                            <a href="#" class="btn btn-outline-light btn-sm w-50">Appointment 
+                                                <span class="icon-right text-gradient icon"> 
+                                                    <i class="fas fa-paper-plane"></i>
+                                                 </span> 
+                                            </a>
+                                            <a href="#" class="btn btn-outline-light btn-sm w-50">Website
+                                                <span class="icon-right text-gradient icon"> 
+                                                    <i class="fas fa-globe"></i>
+                                                 </span> 
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-location__item mb-5">
+                        <h3 class="title text-poppins mb-3 fw-semibold">North America</h3>
+                        <div class="row gy-4">
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="card common-card">
+                                    <div class="card-body p-lg-4 p-3">
+                                        <h6 class="mb-4 border-bottom pb-3 mb-3 font-18">North America, New York</h6>
+                                        <div class="contact-info style-two d-flex align-items-center gap-lg-3 gap-2">
+                                            <span class="contact-info__icon flex-shrink-0"><i class="fas fa-map-marker-alt"></i></span>
+                                            <div class="contact-info__content">
+                                                <span class="contact-info__text text-heading fw-bold font-16">Address</span>
+                                                <span class="contact-info__address font-15 fw-500">5816 S. Coulter Street Amarillo, TX 79119</span>
+                                            </div>
+                                        </div>
+                                        <div class="contact-info style-two d-flex align-items-center gap-lg-3 gap-2">
+                                            <span class="contact-info__icon flex-shrink-0"><i class="fas fa-phone"></i></span>
+                                            <div class="contact-info__content">
+                                                <span class="contact-info__text text-heading fw-bold font-16">Phone Number</span>
+                                                <span class="contact-info__address font-15 fw-500">012 345 678 9101</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex mt-4 align-items-center gap-2">
+                                            <a href="#" class="btn btn-outline-light btn-sm w-50">Appointment 
+                                                <span class="icon-right text-gradient icon"> 
+                                                    <i class="fas fa-paper-plane"></i>
+                                                 </span> 
+                                            </a>
+                                            <a href="#" class="btn btn-outline-light btn-sm w-50">Website
+                                                <span class="icon-right text-gradient icon"> 
+                                                    <i class="fas fa-globe"></i>
+                                                 </span> 
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="card common-card">
+                                    <div class="card-body p-lg-4 p-3">
+                                        <h6 class="mb-4 border-bottom pb-3 mb-3 font-18">North America, New York</h6>
+                                        <div class="contact-info style-two d-flex align-items-center gap-lg-3 gap-2">
+                                            <span class="contact-info__icon flex-shrink-0"><i class="fas fa-map-marker-alt"></i></span>
+                                            <div class="contact-info__content">
+                                                <span class="contact-info__text text-heading fw-bold font-16">Address</span>
+                                                <span class="contact-info__address font-15 fw-500">5816 S. Coulter Street Amarillo, TX 79119</span>
+                                            </div>
+                                        </div>
+                                        <div class="contact-info style-two d-flex align-items-center gap-lg-3 gap-2">
+                                            <span class="contact-info__icon flex-shrink-0"><i class="fas fa-phone"></i></span>
+                                            <div class="contact-info__content">
+                                                <span class="contact-info__text text-heading fw-bold font-16">Phone Number</span>
+                                                <span class="contact-info__address font-15 fw-500">012 345 678 9101</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex mt-4 align-items-center gap-2">
+                                            <a href="#" class="btn btn-outline-light btn-sm w-50">Appointment 
+                                                <span class="icon-right text-gradient icon"> 
+                                                    <i class="fas fa-paper-plane"></i>
+                                                 </span> 
+                                            </a>
+                                            <a href="#" class="btn btn-outline-light btn-sm w-50">Website
+                                                <span class="icon-right text-gradient icon"> 
+                                                    <i class="fas fa-globe"></i>
+                                                 </span> 
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="card common-card">
+                                    <div class="card-body p-lg-4 p-3">
+                                        <h6 class="mb-4 border-bottom pb-3 mb-3 font-18">North America, New York</h6>
+                                        <div class="contact-info style-two d-flex align-items-center gap-lg-3 gap-2">
+                                            <span class="contact-info__icon flex-shrink-0"><i class="fas fa-map-marker-alt"></i></span>
+                                            <div class="contact-info__content">
+                                                <span class="contact-info__text text-heading fw-bold font-16">Address</span>
+                                                <span class="contact-info__address font-15 fw-500">5816 S. Coulter Street Amarillo, TX 79119</span>
+                                            </div>
+                                        </div>
+                                        <div class="contact-info style-two d-flex align-items-center gap-lg-3 gap-2">
+                                            <span class="contact-info__icon flex-shrink-0"><i class="fas fa-phone"></i></span>
+                                            <div class="contact-info__content">
+                                                <span class="contact-info__text text-heading fw-bold font-16">Phone Number</span>
+                                                <span class="contact-info__address font-15 fw-500">012 345 678 9101</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex mt-4 align-items-center gap-2">
+                                            <a href="#" class="btn btn-outline-light btn-sm w-50">Appointment 
+                                                <span class="icon-right text-gradient icon"> 
+                                                    <i class="fas fa-paper-plane"></i>
+                                                 </span> 
+                                            </a>
+                                            <a href="#" class="btn btn-outline-light btn-sm w-50">Website
+                                                <span class="icon-right text-gradient icon"> 
+                                                    <i class="fas fa-globe"></i>
+                                                 </span> 
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="card common-card">
+                                    <div class="card-body p-lg-4 p-3">
+                                        <h6 class="mb-4 border-bottom pb-3 mb-3 font-18">North America, New York</h6>
+                                        <div class="contact-info style-two d-flex align-items-center gap-lg-3 gap-2">
+                                            <span class="contact-info__icon flex-shrink-0"><i class="fas fa-map-marker-alt"></i></span>
+                                            <div class="contact-info__content">
+                                                <span class="contact-info__text text-heading fw-bold font-16">Address</span>
+                                                <span class="contact-info__address font-15 fw-500">5816 S. Coulter Street Amarillo, TX 79119</span>
+                                            </div>
+                                        </div>
+                                        <div class="contact-info style-two d-flex align-items-center gap-lg-3 gap-2">
+                                            <span class="contact-info__icon flex-shrink-0"><i class="fas fa-phone"></i></span>
+                                            <div class="contact-info__content">
+                                                <span class="contact-info__text text-heading fw-bold font-16">Phone Number</span>
+                                                <span class="contact-info__address font-15 fw-500">012 345 678 9101</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex mt-4 align-items-center gap-2">
+                                            <a href="#" class="btn btn-outline-light btn-sm w-50">Appointment 
+                                                <span class="icon-right text-gradient icon"> 
+                                                    <i class="fas fa-paper-plane"></i>
+                                                 </span> 
+                                            </a>
+                                            <a href="#" class="btn btn-outline-light btn-sm w-50">Website
+                                                <span class="icon-right text-gradient icon"> 
+                                                    <i class="fas fa-globe"></i>
+                                                 </span> 
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="google-map position-sticky top-120">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.178510207605!2d55.271801474441546!3d25.197201831702262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43348a67e24b%3A0xff45e502e1ceb7e2!2sBurj%20Khalifa!5e0!3m2!1sen!2sbd!4v1707882951920!5m2!1sen!2sbd" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ========================= Map Location Section End ======================= -->
+
+
+<!-- ============================= CTA section Start ===================== -->
+<section class="cta padding-b-120">
+    <div class="container container-two">
+        <div class="cta-box flx-between gap-2">
+            <div class="cta-content">
+                <h2 class="cta-content__title">Subscribe To Our <span class="text-gradient">Newsletter</span> </h2>
+                <p class="cta-content__desc">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                <form action="#" class="cta-content__form d-flex align-items-center gap-2">
+                    <div class="position-relative w-100">
+                        <input type="text" class="common-input common-input--withLeftIcon w-100" placeholder="Enter Your Email Address">
+                        <span class="input-icon input-icon--left text-gradient font-20 line-height-1"><i class="far fa-envelope"></i></span>
+                    </div>
+                    <button type="submit" class="btn btn-main text-uppercase flex-shrink-0"> Subscribe <span class="text">Now</span> </button>
+                </form>
+            </div>
+            <div class="cta-content__thumb d-xl-block d-none">
+                <img src="assets/images/thumbs/cta-img.png" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ============================= CTA section End ===================== -->
+{% endblock %}
