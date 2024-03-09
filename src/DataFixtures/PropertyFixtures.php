@@ -34,8 +34,16 @@ class PropertyFixtures extends Fixture implements DependentFixtureInterface
             $manager->persist($property);
 
             for ($j = 1; $j < rand(1, 5); $j++) {
+                /**
+                 * je vais télécharger des images de biens immobiliers  
+                 */
+
+                $image = file_get_contents('https://loremflickr.com/1920/584/house');
+                $ImgNewName = 'property' . rand(1, 9999) . '.jpg';
+                file_put_contents('C:\laragon\www\La-Rochelle\CDA\cityscape\public\assets\images\property/' . $ImgNewName, $image);
+
                 $picture = new Pictures();
-                $picture->setImageName($j . '.jpg');
+                $picture->setImageName($ImgNewName);
                 $picture->setProperty($property);
                 $manager->persist($picture);
             }
