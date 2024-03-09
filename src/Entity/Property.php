@@ -27,12 +27,6 @@ class Property
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $status = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $status1 = null;
-
     #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 0)]
     private ?string $price = null;
 
@@ -57,6 +51,9 @@ class Property
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $Latitude = null;
+
+    #[ORM\ManyToOne(inversedBy: 'properties')]
+    private ?Category $Category = null;
 
     public function __construct()
     {
@@ -89,30 +86,6 @@ class Property
     public function setDescription(string $description): static
     {
         $this->description = $description;
-
-        return $this;
-    }
-
-    public function getStatus(): ?string
-    {
-        return $this->status;
-    }
-
-    public function setStatus(string $status): static
-    {
-        $this->status = $status;
-
-        return $this;
-    }
-
-    public function getStatus1(): ?string
-    {
-        return $this->status1;
-    }
-
-    public function setStatus1(string $status1): static
-    {
-        $this->status1 = $status1;
 
         return $this;
     }
@@ -245,6 +218,18 @@ class Property
     public function setLatitude(?string $Latitude): static
     {
         $this->Latitude = $Latitude;
+
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->Category;
+    }
+
+    public function setCategory(?Category $Category): static
+    {
+        $this->Category = $Category;
 
         return $this;
     }

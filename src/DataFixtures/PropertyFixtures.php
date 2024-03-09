@@ -19,9 +19,8 @@ class PropertyFixtures extends Fixture implements DependentFixtureInterface
             $property = new Property();
             $property->setPropertyTitle($faker->sentence(3));
             $property->setDescription($faker->text(200));
-            // Attention a verifier que les status sont bien dans les category
-            $property->setStatus($faker->randomElement(['For Sale', 'For Rent']));
-            $property->setStatus1($faker->randomElement(['New', 'Old']));
+            $property->setCategory($this->getReference('category_' . rand(1, 5)));
+
 
             $property->setPrice($faker->randomNumber(5));
             $property->setArea($faker->randomNumber(3));

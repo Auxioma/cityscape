@@ -110,7 +110,6 @@ class CategoryFixtures extends Fixture
             $category->setName($value['name']);
             $category->setSlug($value['slug']);
             $manager->persist($category);
-            $this->addReference('category_' . $key, $category);
             if (isset($value['parent'])) {
                 foreach ($value['parent'] as $k => $v) {
                     $parent = new \App\Entity\Category();
@@ -118,7 +117,8 @@ class CategoryFixtures extends Fixture
                     $parent->setSlug($v['slug']);
                     $parent->setParent($category);
                     $manager->persist($parent);
-                    $this->addReference('category_' . $key . '_' . $k, $parent);
+                    $this->setReference('category_' . $k, $parent);
+
                 }
             }
         }
