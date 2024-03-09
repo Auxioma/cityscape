@@ -3,12 +3,11 @@
 namespace App\Controller\Admin;
 
 use App\Entity\User;
-use App\Form\Admin\CreatePasswordType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\Mailer\MailerInterface;
-use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
@@ -24,6 +23,13 @@ class UserCrudController extends AbstractCrudController
         return User::class;
     }
 
+    public function configureFilters(Filters $filters): Filters
+    {
+        return $filters
+            ->add('username', 'Pseudo')
+            ->add('email', 'Email')
+        ;
+    }
 
     public function configureFields(string $pageName): iterable
     {
@@ -32,10 +38,9 @@ class UserCrudController extends AbstractCrudController
             TextField::new('username', 'Pseudo'),
             TextField::new('LastName', 'Nom'),
             TextField::new('firstName', 'Prénom'),
-            TextField::new('email', 'Email'),   
+            TextField::new('email', 'Email'),
+            TextField::new('password', 'Mot de passe'),
             BooleanField::new('isVerified', 'Vérifié'),
-            // passsword with defaut value 0000
-            Field::new('password', 'Mot de passe')->setFormTypeOption('data', '0000'),
         ];
     }
 
