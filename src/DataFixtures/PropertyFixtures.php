@@ -5,6 +5,7 @@ namespace App\DataFixtures;
 use Faker;
 use App\Entity\Pictures;
 use App\Entity\Property;
+use App\Entity\Amenities;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
@@ -32,11 +33,10 @@ class PropertyFixtures extends Fixture implements DependentFixtureInterface
 
             $manager->persist($property);
 
-            for ($j = 1; $j < rand(1, 5); $j++) {
+            for ($j = 0; $j < rand(1, 5); $j++) {
                 /**
                  * je vais télécharger des images de biens immobiliers  
                  */
-
                 $image = file_get_contents('https://loremflickr.com/1920/584/house');
                 $ImgNewName = 'property' . rand(1, 9999) . '.jpg';
                 file_put_contents('C:\laragon\www\La-Rochelle\CDA\cityscape\public\assets\images\property/' . $ImgNewName, $image);
@@ -45,6 +45,14 @@ class PropertyFixtures extends Fixture implements DependentFixtureInterface
                 $picture->setImageName($ImgNewName);
                 $picture->setProperty($property);
                 $manager->persist($picture);
+            }
+
+            // Amenities
+            for ($k = 0; $k < rand(3, 9); $k++) {
+                $amenities = new Amenities();
+                $amenities->setName($faker->word);
+                $amenities->setProperty($property);
+                $manager->persist($amenities);
             }
         }
 
