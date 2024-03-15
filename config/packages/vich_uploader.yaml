@@ -3,8 +3,8 @@ vich_uploader:
 
     mappings:
         products:
-            uri_prefix: /asset/images/property
-            upload_destination: '%kernel.project_dir%/public/asset/images/property'
+            uri_prefix: /assets/images/property
+            upload_destination: '%kernel.project_dir%/public/assets/images/property'
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
             inject_on_load: false
             delete_on_remove: true

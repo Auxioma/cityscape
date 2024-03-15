@@ -16,7 +16,7 @@ class PropertyFixtures extends Fixture implements DependentFixtureInterface
     {
         $faker = Faker\Factory::create();
 
-        for ($i= 0; $i < 500; $i++) {
+        for ($i= 0; $i < 100; $i++) {
             $property = new Property();
             $property->setPropertyTitle($faker->sentence(3));
             $property->setDescription($faker->text(200));
@@ -37,7 +37,7 @@ class PropertyFixtures extends Fixture implements DependentFixtureInterface
                 /**
                  * je vais télécharger des images de biens immobiliers  
                  */
-                $image = file_get_contents('https://loremflickr.com/1920/584/house');
+                $image = file_get_contents('https://loremflickr.com/905/584/house');
                 $ImgNewName = 'property' . rand(1, 9999) . '.jpg';
                 file_put_contents('C:\laragon\www\La-Rochelle\CDA\cityscape\public\assets\images\property/' . $ImgNewName, $image);
 
