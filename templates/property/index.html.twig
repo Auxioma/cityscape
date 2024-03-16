@@ -10,20 +10,19 @@
 			<div class="row justify-content-center">
 				<div class="col-lg-8">
 					<div class="breadcrumb__wrapper">
-						<h2 class="breadcrumb__title">
-							Property</h2>
+						<h2 class="breadcrumb__title">{{ properties[0].Category.parent.name }} {{ properties[0].Category.name }}</h2>
 						<ul class="breadcrumb__list">
 							<li class="breadcrumb__item">
 								<a href="index.html" class="breadcrumb__link">
 									<i class="las la-home"></i>
-									Home</a>
+									Accueil</a>
 							</li>
 							<li class="breadcrumb__item">
 								<i class="fas fa-angle-right"></i>
 							</li>
 							<li class="breadcrumb__item">
 								<span class="breadcrumb__item-text">
-									Property
+									{{ properties[0].Category.parent.name }} {{ properties[0].Category.name }}
 								</span>
 							</li>
 						</ul>
@@ -95,7 +94,7 @@
 					</div>
 				</form>
 				<div class="property-filter__bottom flx-between gap-2">
-					<span class="property-filter__text font-18 text-gray-800">Showing 1-10 of 23</span>
+					<span class="property-filter__text font-18 text-gray-800">{{ properties.getTotalItemCount }} {{ properties[0].Category.name }} en {{ properties[0].Category.parent.name }}  </span>
 					<div class="d-flex align-items-center gap-2">
 						<div class="list-grid d-flex align-items-center gap-2 me-4">
 							<button class="list-grid__button grid-button active text-body">
@@ -128,7 +127,7 @@
 				<div class="col-lg-4 col-sm-6">
 					<div class="property-item style-two">
 						<div class="property-item__thumb">
-							<a href="property-details.html" class="link">
+							<a href="{{ path('app_property_details', {'slug':property.slug }) }}" class="link">
                                 {% set pictures = property.pictures|first %}
                                 {% if pictures is not null %}
                                     <img src="{{ vich_uploader_asset(pictures, 'imageFile') }}" alt="" class="cover-img" width="410" height="264">
@@ -137,7 +136,7 @@
 						</div>
 						<div class="property-item__content">
 							<h6 class="property-item__title">
-								<a href="property-details.html" class="link">
+								<a href="{{ path('app_property_details', {'slug':property.slug }) }}" class="link">
 									{{ property.propertyTitle }}
 								</a>
 							</h6>
@@ -157,15 +156,23 @@
 							</ul>
 							<h6 class="property-item__price">
 								{{ property.price|format_currency('EUR', {fraction_digit: 2}) }}
-								<span class="day">/per day</span>
+								
+								{% if property.Category.parent.name == 'Location' %}
+									<span class="day">/par mois</span>
+								{% elseif property.Category.parent.name == 'Vente' %}
+									<span class="day">/FA inclus</span>
+								{% endif %}
+								
+
+
 							</h6>
 							<p class="property-item__location d-flex gap-2">
 								<span class="icon text-gradient">
 									<i class="fas fa-map-marker-alt"></i>
 								</span>
-								66 Broklyant, New York America
+								14n rue du ppppppp, 77000 Melun
 							</p>
-							<a href="property-details.html" class="simple-btn text-gradient fw-semibold font-14">Book Now
+							<a href="{{ path('app_property_details', {'slug':property.slug }) }}" class="simple-btn text-gradient fw-semibold font-14">Book Now
 								<span class="icon-right">
 									<i class="fas fa-arrow-right"></i>
 								</span>
@@ -176,7 +183,12 @@
                 {% endfor %}
 
 			</div>
-			<nav aria-label="Page navigation example">
+			<div class="navigation">
+				{{ knp_pagination_render(properties) }}
+
+			</div>
+
+			<!-- <nav aria-label="Page navigation example">
 				<ul class="pagination common-pagination">
 					<li class="page-item active">
 						<a class="page-link" href="#">1</a>
@@ -191,7 +203,7 @@
 						<a class="page-link" href="#">4</a>
 					</li>
 				</ul>
-			</nav>
+			</nav> -->
 		</div>
 	</section>
 	<!-- ======================== Property Section End ============================ -->

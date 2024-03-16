@@ -86,23 +86,6 @@ class CategoryFixtures extends Fixture
                     ],
                 ]
             ],
-            3 => [
-                'name' => 'Gestion',
-                'description' => 'Gestion de biens immobiliers',
-                'slug' => 'gestion',
-                'parent' => [
-                    1 => [
-                        'name' => 'Gestion locative',
-                        'description' => 'Gestion locative',
-                        'slug' => 'gestion-locative',
-                    ],
-                    2 => [
-                        'name' => 'Gestion de copropriété',
-                        'description' => 'Gestion de copropriété',
-                        'slug' => 'gestion-de-copropriete',
-                    ],
-                ]
-            ],
         ];
         
         foreach ($category as $key => $value) {

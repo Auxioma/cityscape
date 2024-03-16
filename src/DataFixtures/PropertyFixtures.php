@@ -16,7 +16,7 @@ class PropertyFixtures extends Fixture implements DependentFixtureInterface
     {
         $faker = Faker\Factory::create();
 
-        for ($i= 0; $i < 100; $i++) {
+        for ($i= 0; $i < 1300; $i++) {
             $property = new Property();
             $property->setPropertyTitle($faker->sentence(3));
             $property->setDescription($faker->text(200));
@@ -31,6 +31,8 @@ class PropertyFixtures extends Fixture implements DependentFixtureInterface
             $property->setLatitude($faker->latitude);
             $property->setLongitude($faker->longitude);
 
+            $property->setSlug($faker->slug);
+
             $manager->persist($property);
 
             for ($j = 0; $j < rand(1, 5); $j++) {
@@ -38,8 +40,13 @@ class PropertyFixtures extends Fixture implements DependentFixtureInterface
                  * je vais télécharger des images de biens immobiliers  
                  */
                 $image = file_get_contents('https://loremflickr.com/905/584/house');
-                $ImgNewName = 'property' . rand(1, 9999) . '.jpg';
-                file_put_contents('C:\laragon\www\La-Rochelle\CDA\cityscape\public\assets\images\property/' . $ImgNewName, $image);
+                $ImgNewName = 'property' . rand(1, 100) . '.jpg';
+
+                // je vérifie avant que l'image n'existe pas
+                while (!file_exists('C:\laragon\www\La-Rochelle\CDA\cityscape\public\assets\images\property/' . $ImgNewName)) {
+                    file_put_contents('C:\laragon\www\La-Rochelle\CDA\cityscape\public\assets\images\property/' . $ImgNewName, $image);
+
+                }
 
                 $picture = new Pictures();
                 $picture->setImageName($ImgNewName);

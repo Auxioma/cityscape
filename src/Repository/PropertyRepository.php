@@ -21,6 +21,24 @@ class PropertyRepository extends ServiceEntityRepository
         parent::__construct($registry, Property::class);
     }
 
+    
+    /**
+      * @return Property[] Returns an array of Property objects
+      */
+    public function FindPropertyByMenu($subMenu, $id): array
+    {
+        return $this->createQueryBuilder('p')
+            ->join('p.Category', 'm')
+            ->andWhere('m.slug = :val')
+            ->setParameter('val', $subMenu)
+            ->andWhere('m.id = :id')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getResult()
+
+        ;
+    }
+
     //    /**
     //     * @return Property[] Returns an array of Property objects
     //     */

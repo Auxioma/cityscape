@@ -55,6 +55,9 @@ class Property
     #[ORM\ManyToOne(inversedBy: 'properties')]
     private ?Category $Category = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $slug = null;
+
     public function __construct()
     {
         $this->pictures = new ArrayCollection();
@@ -230,6 +233,18 @@ class Property
     public function setCategory(?Category $Category): static
     {
         $this->Category = $Category;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): static
+    {
+        $this->slug = $slug;
 
         return $this;
     }

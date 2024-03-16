@@ -28,7 +28,7 @@
 
         <main class="body-bg">
             {% include '_partials/header-top.html.twig' %}
-            {% include '_partials/menu.html.twig' %}
+            {{ render(controller('App\\Controller\\Menu\\MenuController::menu')) }}
 
             {% block body %}{% endblock %} 
         </main>
