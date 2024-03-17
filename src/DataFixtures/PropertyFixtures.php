@@ -39,13 +39,12 @@ class PropertyFixtures extends Fixture implements DependentFixtureInterface
                 /**
                  * je vais télécharger des images de biens immobiliers  
                  */
-                $image = file_get_contents('https://loremflickr.com/905/584/house');
                 $ImgNewName = 'property' . rand(1, 100) . '.jpg';
 
                 // je vérifie avant que l'image n'existe pas
                 while (!file_exists('C:\laragon\www\La-Rochelle\CDA\cityscape\public\assets\images\property/' . $ImgNewName)) {
+                    $image = file_get_contents('https://loremflickr.com/905/584/house');
                     file_put_contents('C:\laragon\www\La-Rochelle\CDA\cityscape\public\assets\images\property/' . $ImgNewName, $image);
-
                 }
 
                 $picture = new Pictures();

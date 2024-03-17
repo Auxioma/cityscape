@@ -12,7 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class PropertyController extends AbstractController
 {
-    #[Route('/property/{menu}/{id}-{subMenu}', name: 'app_property')]
+    #[Route('/property/{menu}/{id}-{subMenu}', name: 'app_property')] 
     public function index(PropertyRepository $property, $id, $subMenu, EntityManagerInterface $em, PaginatorInterface $paginator, Request $request): Response
     {
         $query = $property->FindPropertyByMenu($subMenu, $id);

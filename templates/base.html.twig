@@ -12,7 +12,8 @@
             <link rel="stylesheet" href="{{ asset('assets/css/line-awesome.min.css') }}">
             <link rel="stylesheet" href="{{ asset('assets/css/image-uploader.min.css') }}">
             <link rel="stylesheet" href="{{ asset('assets/css/jquery-ui.css') }}">
-            <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">          
+            <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">   
+            {% block stylesheet %}{% endblock %}       
     </head>
     <body>
 
@@ -43,5 +44,6 @@
             <script src="{{ asset('assets/js/image-uploader.min.js') }}"></script>
             <script src="{{ asset('assets/js/jquery-ui.min.js') }}"></script>
             <script src="{{ asset('assets/js/main.js') }}"></script>
+            {% block javascript %}{% endblock %}
     </body>
 </html>
