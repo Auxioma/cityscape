@@ -21,6 +21,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     use TimestampTraits;
 
+    public function __toString()
+    {
+        return $this->firstName . ' ' . $this->LastName;
+    }
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]

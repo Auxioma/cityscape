@@ -3,15 +3,15 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Property;
-use Doctrine\Common\Collections\Collection;
-use Vich\UploaderBundle\Form\Type\VichImageType;
+use App\Form\Admin\VichImageType;
+use App\Form\Admin\VichImagePropertyType;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 
 class PropertyCrudController extends AbstractCrudController
 {
@@ -23,16 +23,27 @@ class PropertyCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
+            // 3 tabulations pour l'indentation
+            FormField::addTab('Aspects généraux du bien immobilier'),
             IdField::new('id')->onlyOnIndex(),
             ImageField::new('pictures[0].imageName', 'Image')
                 ->setBasePath('/assets/images/property/')
                 ->onlyOnIndex(),
-            TextField::new('propertyTitle', 'Titre'),
-            TextField::new('price', 'Prix'),
-            TextField::new('Area', 'Surface'),
-            TextField::new('room', 'Nombre de pièces'),
+            TextField::new('propertyTitle', 'Titre')->setColumns(6),
+            TextField::new('price', 'Prix')->setColumns(6),
+            TextField::new('Area', 'Surface')->setColumns(6),
+            TextField::new('room', 'Nombre de pièces')->setColumns(6),
+
+            /**
+             * a voir si on met automatiquement le User en fonction de l'agent connecté
+             */
             AssociationField::new('AgentImmobilier', 'Agent'),
-            CollectionField::new('amenities ', 'Images')->onlyOnForms(),
+
+            FormField::addTab('les service du bien immobilier'),
+            CollectionField::new('amenities', 'Les services proposé')->onlyOnForms(),
+
+            FormField::addTab('Les images'),
+            // colletion avec le champ image file dans le formulaire foem/admin/vichimagetype   
         ];
     }
 }

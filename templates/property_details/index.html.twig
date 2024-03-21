@@ -344,7 +344,7 @@
         // input hidden qui contient les valeurs
         var lat = document.getElementById('lat').getAttribute('data-latitude');
         var lon = document.getElementById('long').getAttribute('data-longitude');
-        
+
         // initialisation de la carte
             function initMap() {
                 // Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
@@ -364,5 +364,4 @@
                 var marker = L.marker([lat, lon]).addTo(macarte);
             };
     </script>
-
 {% endblock %}
