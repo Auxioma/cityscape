@@ -20,10 +20,10 @@ class PropertyFixtures extends Fixture implements DependentFixtureInterface
             $property = new Property();
             $property->setPropertyTitle($faker->sentence(3));
             $property->setDescription($faker->text(200));
-            $property->setCategory($this->getReference('category_' . rand(1, 5)));
+            $property->setCategory($this->getReference('category_' . rand(1, 6)));
 
 
-            $property->setPrice($faker->randomNumber(5));
+            $property->setPrice($faker->randomNumber(2));
             $property->setArea($faker->randomNumber(3));
             $property->setRoom($faker->randomNumber(1));
             $property->setAgentImmobilier($this->getReference('agent'));

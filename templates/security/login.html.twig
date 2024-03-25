@@ -36,11 +36,11 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="loginRegister-content">
-                            <form action="#">
+                            <form method="post">
                                 {% if error %}
                                     <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                                 {% endif %}
-                                <h3 class="loginRegister__title text-poppins">Sign in to CityScape</h3>
+                                <h3 class="loginRegister__title text-poppins">Connectez vous</h3>
                                 <p class="loginRegister__desc mb-4 font-18">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, corrupti.</p>
 
                                 <div class="row gy-lg-4 gy-3">

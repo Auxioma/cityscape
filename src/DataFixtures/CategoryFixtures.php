@@ -101,6 +101,7 @@ class CategoryFixtures extends Fixture
                     $parent->setParent($category);
                     $manager->persist($parent);
                     $this->setReference('category_' . $k, $parent);
+                    echo $k."\n";
 
                 }
             }
