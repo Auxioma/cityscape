@@ -11,6 +11,7 @@ use Doctrine\ORM\Mapping\Table;
 
 #[ORM\Entity(repositoryClass: CartRepository::class)]
 #[Table('location')]
+#[ORM\HasLifecycleCallbacks]
 class Cart
 {
     use TimestampTraits;

@@ -3,13 +3,15 @@
 namespace App\Controller;
 
 use Stripe\Stripe;
+use App\Entity\Cart;
 use App\Repository\PropertyRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 class CartController extends AbstractController
 {
@@ -109,10 +111,20 @@ class CartController extends AbstractController
 
     #[Route('/success', name: 'app_success')]
     #[IsGranted('ROLE_USER')]
-    public function success(SessionInterface $session): Response
+    public function success(SessionInterface $session, PropertyRepository $property, EntityManagerInterface $entityManager): Response
     {
-        $session->set('panier', []);
+        $panier = $session->get('panier', []);
 
+        // je vais faire une boucle pour l'insert danc cart
+        foreach ($panier as $id => $quantity) {
+            $AjoutPanier = new Cart();
+            $AjoutPanier->setUser($this->getUser());
+            $AjoutPanier->setStripeId('123456');
+            $AjoutPanier->addProperty($property->find($id));
+            $entityManager->persist($AjoutPanier);
+            $entityManager->flush();
+        }
+        
         return $this->render('cart/success.html.twig');
     }
 
@@ -120,6 +132,8 @@ class CartController extends AbstractController
     #[IsGranted('ROLE_USER')]
     public function cancel_url(): Response
     {
+        
+
         return $this->render('cart/cancel_url.html.twig');
     }
 
