@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Property;
 use App\Form\Admin\VichImageType;
+use App\Form\GeolocalisationFormType;
 use App\Form\Admin\VichImagePropertyType;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
@@ -37,7 +38,8 @@ class PropertyCrudController extends AbstractCrudController
             /**
              * a voir si on met automatiquement le User en fonction de l'agent connecté
              */
-            AssociationField::new('AgentImmobilier', 'Agent'),
+            AssociationField::new('AgentImmobilier', 'Agent')->setColumns(6),
+            TextField::new('geolocalisation', 'Geolocalisation')->setFormTypeOption('mapped', false),
 
             FormField::addTab('les service du bien immobilier'),
             CollectionField::new('amenities', 'Les services proposé')->onlyOnForms(),
