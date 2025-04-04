@@ -1,8 +1,8 @@
-function index7() {
+function HomeVideo() {
 
     return (
         <div>tptptptpptpt</div>
     )
 }
 
-export default index7
+export default HomeVideo

@@ -1,8 +1,8 @@
-function index4() {
+function HomeMap() {
 
     return (
         <div>tptptptpptpt</div>
     )
 }
 
-export default index4
+export default HomeMap

@@ -1,8 +1,8 @@
-function index5() {
+function HomeTwo () {
 
     return (
         <div>tptptptpptpt</div>
     )
 }
 
-export default index5
+export default HomeTwo 
