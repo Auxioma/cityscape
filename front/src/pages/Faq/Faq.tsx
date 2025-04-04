@@ -1,8 +1,8 @@
-function index2() {
+function Faq() {
 
     return (
         <div>tptptptpptpt</div>
     )
 }
 
-export default index2
+export default Faq

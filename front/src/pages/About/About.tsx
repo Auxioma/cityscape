@@ -1,8 +1,8 @@
-function index2() {
+function About() {
 
     return (
         <div>tptptptpptpt</div>
     )
 }
 
-export default index2
+export default About
