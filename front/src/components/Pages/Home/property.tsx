@@ -207,7 +207,7 @@ function PropertyHome() {
             </div>
         </section>
 
-);
+    );
 }
 
 export default PropertyHome

@@ -15,7 +15,7 @@ function Desckop() {
                 {menuItem.title}
               </Link>
             ) : (
-              <span className="nav-menu__link">{menuItem.title}</span>
+              <a className="nav-menu__link">{menuItem.title}</a>
             )}
 
             {menuItem.submenu && (

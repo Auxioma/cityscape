@@ -13,7 +13,7 @@ interface SubMenuItem {
     {
       title: "Home",
       submenu: [
-        { title: "Home One", link: "index.html" },
+        { title: "Home One", link: "" },
         { title: "Home Two", link: "index-2.html" },
         { title: "Home Three", link: "index-3.html" },
         { title: "Home Four", link: "index-4.html" },

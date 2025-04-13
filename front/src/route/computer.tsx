@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Desckop from "../components/Navbar/Desckop";
+import HeaderRight from "../components/Header/headeright";
+
 import Home from "../pages/Index/Home";
 
 // Simples composants de page pour test
@@ -8,11 +10,25 @@ const DummyPage = ({ title }: { title: string }) => <div style={{ padding: "20px
 function Computer() {
   return (
     <Router>
-      <Desckop />
+
+<header className="header">
+          <div className="container container-two">
+            <nav className="header-inner flx-between">
+              <div className="logo">
+                <a href="index.html" className="link">
+                  <img src="assets/images/logo/logo.png" alt="Logo" />
+                </a>
+              </div>
+              <Desckop />
+              <HeaderRight />
+            </nav> 
+          </div>
+        </header>
+      
 
       <Routes>
         {/* HOME */}
-        <Route path="/index.html" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/index-2.html" element={<DummyPage title="Home Two" />} />
         <Route path="/index-3.html" element={<DummyPage title="Home Three" />} />
         <Route path="/index-4.html" element={<DummyPage title="Home Four" />} />

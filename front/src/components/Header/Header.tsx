@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+
 function Header() {
     return (
         <div className="header-top">
@@ -5,17 +8,23 @@ function Header() {
                 <div className="flx-between">
                     <div className="header-info flx-align">
                         <div className="header-info__item flx-align">
-                            <span className="header-info__icon"><i className="fas fa-phone"></i></span>
-                            <a href="tel:" className="header-info__text">(629) 555-0129</a>
+                            <span className="header-info__icon">
+                                <FontAwesomeIcon icon={faPhone} />
+                            </span>
+                            <a href="tel:(629) 555-0129" className="header-info__text">(629) 555-0129</a>
                         </div>
                         <div className="header-info__item flx-align">
-                            <span className="header-info__icon"><i className="fas fa-envelope"></i></span>
-                            <a href="mailto:" className="header-info__text">info@example.com</a>
+                            <span className="header-info__icon">
+                                <FontAwesomeIcon icon={faEnvelope} />
+                            </span>
+                            <a href="mailto:info@example.com" className="header-info__text">info@example.com</a>
                         </div>
                     </div>
                     <div className="header-info flx-align d-sm-block d-none">
                         <div className="header-info__item flx-align">
-                            <span className="header-info__icon"><i className="fas fa-map-marker-alt"></i></span>
+                            <span className="header-info__icon">
+                                <FontAwesomeIcon icon={faMapMarkerAlt} />
+                            </span>
                             <span className="header-info__text">6391 Elgin St. Celina, 10299</span>
                         </div>
                     </div>
