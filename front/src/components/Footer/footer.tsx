@@ -1,12 +1,13 @@
 function Footer () {
     return (
+        <>
         <footer className="footer footer-two padding-y-120">
             <div className="container container-two">
                 <div className="row gy-5">
                     <div className="col-xl-4 col-lg-6">
                         <div className="footer-item">
                             <div className="footer-item__logo">
-                                <a href="index.html"> <img src="assets/images/logo/white-logo.png" alt=""></a>
+                                <a href="index.html"> <img src="assets/images/logo/white-logo.png" alt="" /></a>
                             </div>
                             <p className="footer-item__desc">It is a long established fact that a reader will be
                                 distracted</p>
@@ -66,7 +67,7 @@ function Footer () {
                             <form action="#" className="mt-4 subscribe-box">
                                 <div className="input-group">
                                     <input type="text" className="form-control common-input common-input--md text-white"
-                                           placeholder="Your mail address">
+                                           placeholder="Your mail address" />
                                         <button type="submit"
                                                 className="px-4 input-group-text bg--gradient border-0 text-white"><i
                                             className="fas fa-paper-plane"></i></button>
@@ -106,7 +107,7 @@ function Footer () {
         </div>
     </div>
 
-
+</>
 );
 }
 

@@ -1,36 +1,33 @@
-
-import Mobile from './components/Navbar/mobile';
-import Offcanevas from './components/Header/Offcanvas';
+import HeaderRight from './components/Header/headeright';
 import Header from './components/Header/Header';
-
-import './assets/main.scss';
+import MenuComputer from './route/computer';
 
 function App() {
-
   return (
     <>
       {/* 
       <div className="preloader">
-        <div className="loader"></div>
+        <div className="loader" />
       </div>
       */}
-      <div className="overlay"></div>
-
-      <div className="side-overlay"></div>
-
-      <div className="progress-wrap">
-        <svg className="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-          <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-        </svg>
-      </div>
-      <Mobile />
-      <Offcanevas />
-
       <main className="body-bg">
         <Header />
+        <header className="header">
+          <div className="container container-two">
+            <nav className="header-inner flx-between">
+              <div className="logo">
+                <a href="index.html" className="link">
+                  <img src="assets/images/logo/logo.png" alt="Logo" />
+                </a>
+              </div>
+              <MenuComputer />
+              <HeaderRight />
+            </nav> 
+          </div>
+        </header>
       </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
